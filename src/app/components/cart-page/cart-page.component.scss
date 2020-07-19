@@ -1,0 +1,58 @@
+.cart-page{
+    display: flex;
+    justify-content: center;
+    .cart-page-container{
+        width: 75%;
+        .link{
+            display: flex;
+            a{
+                margin-right: 10px;
+                font-size: 17px;
+                i{
+                    font-size: 12px;
+                }
+            }
+        }
+        .cart{
+            margin-top: 30px;
+            .title{
+                margin-bottom: 20px;
+                h5{
+                    font-size: 20px;
+                }
+
+            }
+            .cart-content{
+                .table{
+                    img{
+                        max-width: 150px;
+                    }
+                    i{
+                        cursor: pointer;
+                        font-size: 15px;
+                    }
+                    .form-group{
+                        display: flex;
+                        .minus, .plus, .amount{
+                            margin-left: 8px;
+                        }
+                    }
+                }
+            }
+            .buy-action{
+                margin-bottom: 30px;
+                .row{
+                    .col1, .col2{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .total-Paid{
+                            font-weight: 550;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

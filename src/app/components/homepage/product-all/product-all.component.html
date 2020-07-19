@@ -1,0 +1,43 @@
+<div class="product-title">
+    <div class="title">
+        <div class="title-wrapper">
+            <div class="line"></div>
+            <h4>TỔNG HỢP SẢN PHẨM</h4>
+            <div class="line"></div>
+        </div>  
+    </div>
+    <div class="item-title">
+        <div class="item" (click) = "getSofa()" 
+        [ngClass]="{'active': isSofa == true}">Bán chạy</div>
+        <div class="item" (click) = "getDecorator()" 
+        [ngClass]="{'active': isDecorator == true}">Khuyến mại</div>
+        <div class="item" (click) = "getRestroom()"
+        [ngClass]="{'active': isRestroom == true}"
+        >Bộ sưu tập</div>
+    </div>
+</div>
+<div class="slide">
+    <div class="slide-container">
+            <owl-carousel-o class="slide-content" [options]="customOptions">
+                            <ng-template  carouselSlide *ngFor="let product of products">
+                                <div class="slide-item">
+                                    <div class="img">
+                                            <img src="{{ product.img }}" alt="" [routerLink]="[ '/product', product.id ]">
+                                            <ng-container *ngIf="product.status == true; else offStock">
+                                                <button type="button" class="btn btn-primary"  (click) = "addtocart(product)">Thêm vào giỏ hàng</button> 
+                                            </ng-container>
+                                            <ng-template #offStock>
+                                                <div class="alert alert-success" role="alert">
+                                                    <strong>Sản phẩm đã hết hàng</strong>
+                                                </div>
+                                            </ng-template>
+                                    </div>
+                                    <div class="product-name">{{product.name}} {{product.id}}</div>
+                                    <div class="price">{{ product.price | currency : 'VND'}}</div>
+                                </div>
+                            </ng-template>
+            </owl-carousel-o>
+    </div>
+</div>
+    
+

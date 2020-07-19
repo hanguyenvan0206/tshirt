@@ -1,0 +1,33 @@
+.register{
+    display: flex;
+    justify-content: center;
+    .register-container{
+        width: 75%;
+        .link{
+            display: flex;
+            a{
+                margin-right: 10px;
+                font-size: 17px;
+                i{
+                    font-size: 12px;
+                }
+            }
+        }
+        .content{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            .row{
+                .col-12{
+                    .form-group{
+                        label{
+                            font-weight: 600;
+                        }
+                        button{
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

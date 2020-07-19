@@ -1,0 +1,41 @@
+.login{
+    display: flex;
+    justify-content: center;
+    .login-container{
+        width: 75%;
+        .link{
+            display: flex;
+            a{
+                margin-right: 10px;
+                font-size: 17px;
+                i{
+                    font-size: 12px;
+                }
+            }
+        }
+        .content{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            .title{
+                h5{
+                    font-weight: 400;
+                    color: #106F85;
+                    font-style: italic;
+                }
+            }
+            .row{
+                margin-top: 20px;
+                .col-12{
+                    .form-group{
+                        label{
+                            font-weight: 600;
+                        }
+                        button{
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,150 @@
+
+.menu-part1{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    background-color: #106F85;
+   .menu-container{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+        .logo{
+            display: flex;
+            align-items: center;
+            h4{
+                font-size: 23px;
+                color: #ffffff;
+            }
+            
+        }
+        .search{
+            width: 30%;
+            display: flex;
+            align-items: center;
+            input, input:active, input:focus{  
+                outline: none;  
+                outline-style: none;  
+                outline-width: 0;
+            } 
+            .search-wrapper{
+                width: 100%;
+                background-color: #ffffff;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                input{
+                    outline: none;
+                    border: none;
+                }
+                input, input:active, input:focus{  
+                    outline: 0;  
+                    outline-style: none;  
+                    outline-width: 0; 
+                } 
+                i{
+                    margin: 0 4% 0 4%;
+                    cursor: pointer;
+                }
+            }
+        }
+        .acount{
+            display: flex;
+            align-items: center;
+            .dropdown{
+                padding: 0;
+                .dropdown-toggle{
+                    margin: 0;
+                    padding: 0;
+                    color: #ffffff;
+                    font-size: 17px;
+                    cursor: pointer;
+                }
+                .dropdown-menu{
+                    margin: 0;
+                    padding: 0;
+                    .user{
+                        .item1{
+                            border-bottom: 1px solid gray ;
+                        }
+                        .item{
+                            cursor: pointer;
+                            &:hover{
+                                background-color:#106F85;
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                    .button{
+                        display: flex;
+                        justify-content: center; 
+                    }
+                    button{
+                        width: 120px;
+                        margin-bottom: 5px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+                
+        }
+        .cart{
+            .cart-number{
+                display: flex;
+                justify-content: center; 
+                h5{
+                    color:#ffffff;
+                    font-size: 16px;
+                }
+            }
+            .cart-logo{
+                display: flex;
+                justify-content: center; 
+                i{
+                    color:#ffffff;
+                    cursor: pointer;
+                }
+            }
+        }
+   } 
+}
+.menu-part-2{
+    display: flex;
+    justify-content: center;
+    .menu-container{
+        width: 75%;
+        .navbar{
+           // border: 1px solid black;
+            .navbar-collapse{
+                text-transform: uppercase;
+                font-weight: 550;
+                color: #000000;
+              //  border: 1px solid black;
+                .navbar-nav{
+                   // border: 1px solid black;
+                    width: 100%;
+                    .product-menu{
+                        width: 30%;
+                    }
+                    .nav-item{
+                        margin-right: 10px;
+                        .dropdown-menu{
+                            padding: 0;
+                            .dropdown-item{
+                                cursor: pointer;
+                                &:hover{
+                                    background-color: #106F85;
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+                        &:hover{
+                            .dropdown-menu{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

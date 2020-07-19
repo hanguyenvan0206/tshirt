@@ -1,0 +1,24 @@
+.banner{
+    .img{
+        max-height: 100%;
+    }
+    .banner-container{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        //border: 1px solid black;
+        .row{
+            //border: 1px solid black;
+            width: 75%;
+            padding: 0;
+            margin: 0;
+            .col-6{
+                padding: 4px;
+                width: 100%;
+                img{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

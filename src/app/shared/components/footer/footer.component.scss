@@ -1,0 +1,118 @@
+footer{
+    background-color: #1E7081;
+    display: flex;
+    justify-content: center;
+	.footer-container{
+		width: 75%;
+		.row{
+			.row1{
+                display: flex;
+                justify-content: flex-start;
+				.footer-logo{
+					margin-top: 20px;
+					a{
+					color: #ffffff;
+					font-size: 30px;
+					font-weight: 550;
+					text-decoration: none;
+					}
+				}
+
+			}
+			.row2{
+				.footer-address{
+					.footer-address-title{
+						h3{
+							margin-top: 30px;
+							text-transform: uppercase;
+							text-align: center;
+							color: #ffffff;
+							font-size: 20px;
+							font-weight: 550;
+						}
+					}
+					.address-item-container{
+						display: flex;
+                        justify-content: center;
+					.footer-address-item{
+							h4{
+								margin-bottom: 5px;
+								color: #ffffff;
+								font-size: 18px;
+								font-weight: 400;
+							}
+						}
+					}
+				}
+
+			}
+			.row3{
+				.footer-link{
+					.footer-link-title{
+						h3{
+							margin-top: 30px;
+							text-transform: uppercase;
+							text-align: center;
+							color: #ffffff;
+							font-size: 20px;
+							font-weight: 550;
+						}
+
+					}
+					.footer-link-item{
+						color: #ffffff;
+						display: flex;
+                        justify-content: center;
+						a{	margin-right: 25px;
+							color: #ffffff;
+							i{font-size: 18px; color: #ffffff;}
+						}
+					}
+				}
+
+			}
+		}
+		.design-copyright{
+			border-top: 1px solid white;
+			p{
+				color: #ffffff;
+				font-size: 15px;
+				text-align: center;
+				font-weight: 400;
+				font-style: italic;
+				a{
+					color: #ffffff;
+					font-size: 15px;
+					font-weight: 400;
+					text-decoration: none;
+				}
+			}
+		}
+
+	}
+	
+}
+@media (min-width: 1024px) and (max-width: 1279px){
+footer{
+	.footer-container{
+		width: 85%}
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+footer{
+	.footer-container{
+		width: 90%}
+	}
+}
+@media (min-width: 600px) and (max-width: 767px) {
+footer{
+	.footer-container{
+		width: 95%}
+	}
+}
+@media (max-width: 599px){
+footer{
+	.footer-container{
+		width: 90%}
+	}
+}

@@ -1,0 +1,75 @@
+<div class="product-page">
+    <div class="product-page-container">
+                <hr/>
+            <div class="link">
+                    <a [routerLink]="[ '/index']">Trang chủ <i class="fas fa-chevron-right"></i></a>
+                    <a >{{listProduct}}</a>
+            </div>
+            <div class="product-page-content">
+                <div class="side-bar">
+                    <div class="title">
+                        <h4>Bộ lọc</h4>
+                    </div>
+                    <div class="filter-price">
+                        <h5>Tìm theo mức giá</h5>
+                            <div class="form-check" *ngFor="let filterPrice of filterPrices">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" (change) = "findPrice(filterPrice)">
+                                <label class="form-check-label" for="defaultCheck1">
+                                        {{filterPrice}}
+                                </label>
+                        </div>
+                    </div>
+                    <hr/>
+                    <h5>Tìm theo màu sắc</h5>
+                    <div class="filter-color">
+                        <div class="color-wrapper" *ngFor="let color of colors">
+                            <div class="color"  [ngStyle]="{ 'background-color': color, 'color': color }" (click) = "colorSearch(color)">{{color}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                        <div class="menu-img" >
+                                <div class="menu-item" *ngFor="let menu of menus" >
+                                  <img  src="{{menu.img}}" (click) = "typeSearch(menu.text)">
+                                    <p class="text">{{menu.text}}</p>
+                                </div>
+                        </div>
+                        <div class="menu-search">
+                                <div class="title">{{ listProduct }}</div>
+                                <div class="search">
+                                        <div class="form-check form-check-inline" *ngFor="let search of searchs">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio" value="{{search}}" [(ngModel)]="Sort" (change) = "onSort(search)">
+                                                <label class="form-check-label" for="inlineRadio">{{search}}</label>
+                                        </div>
+                                        
+                                </div>
+                        </div>
+                        <hr/>
+                        <div class="products">
+                                <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 col-lg-4" *ngFor="let product of products">
+                                                <div class="item" >
+                                                        <div class="slide-item">
+                                                                <div class="img">
+                                                                        <img src="{{ product.img }}" alt="" [routerLink]="[ '/product', product.id ]">
+                                                                        <ng-container *ngIf="product.status == true; else offStock">
+                                                                                <button type="button" class="btn btn-primary"  (click) = "addtocart(product)">Thêm vào giỏ hàng</button> 
+                                                                        </ng-container>
+                                                                        <ng-template #offStock>
+                                                                                <div class="alert alert-success" role="alert">
+                                                                                        <strong>Sản phẩm đã hết hàng</strong>
+                                                                                </div>
+                                                                        </ng-template>        
+                                                                        </div>
+                                                                <div class="product-name">{{product.name}} {{product.id}}</div>
+                                                                <div class="price">{{ product.price | currency : 'VND'}}</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+            </div>
+
+    </div>
+</div>

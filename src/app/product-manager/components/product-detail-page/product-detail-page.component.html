@@ -1,0 +1,133 @@
+<div class="detail-Product">
+    <div class="detail-Product-container">
+        <div class="link">
+            <a [routerLink]="[ '/index']">Trang chủ <i class="fas fa-chevron-right"></i></a>
+            <a [routerLink]="[ '/product']">Sản phẩm <i class="fas fa-chevron-right"></i></a>
+            <a>{{product.name}}-{{product.id}}</a>
+        </div>
+        <div class="product">
+                <div class="product-content">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col1">
+                            <div class="product-img">
+                                <img src="{{product.img}}" alt="">
+                            </div>
+                            <hr/>
+                            <app-rating-shared [star] = "product.star"></app-rating-shared>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col2">
+                            <div class="product-name">{{product.name}}-{{product.id}}</div>
+                            <div class="product-status">
+                                <div class="brand">
+                                    <span>Thương hiệu:</span> N-Furniture
+                                </div>
+                                <div class="status">
+                                    <span>Trạng thái:</span> {{product.status ? 'Còn hàng' : 'Hết hàng'}}
+                                </div>
+                            </div>
+                            <div class="product-price">{{product.price | currency :'VND'}}</div>
+                            <div class="product-des">{{ product.des | formatText: 150}}</div>
+                            <ng-container *ngIf="product.status==true; else outofStock">
+                                <div class="buy-action">
+                                    <div class="form-group">
+                                      <label for="">Số lượng</label>
+                                      <div class="minus"><i class="fas fa-minus" (click) = "byProduct(-1)"></i></div>
+                                      <input type="text"
+                                        class="form-control" [(ngModel)]="number">
+                                      <div class="plus"><i class="fas fa-plus" (click) = "byProduct(1)"></i></div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" [disabled] = "disable" (click) = "addtocart(product)">Thêm vào giỏ hàng</button>
+                                </div>
+                            </ng-container>
+                            <ng-template #outofStock>
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>Sản phẩm đã hết hàng</strong>
+                                </div>
+                            </ng-template>
+                            <hr/>
+                            <div class="contact">
+                                <h5>Gọi điện để được tư vấn: <span>19008198</span></h5>
+                                <h5>Hình thức thanh toán: <i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fab fa-cc-paypal"></i></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="des-comment">
+                        <div class="des-menu">
+                            <div class="des item" (click) = "isDesc()" [ngClass]="{active: isDes ==true}">Mô tả</div>
+                            <div class="comment item" (click) = "isComment()" [ngClass]="{active: isDes ==false}">Đánh giá</div>
+                        </div>
+                        <ng-container *ngIf="isDes == true;else templateName">
+                            <P>{{product.des}}</P>
+                        </ng-container>
+                        <ng-template #templateName>
+                                <div class="form-group">
+                                  <div for="">Đánh giá, nhận xét: 
+                                      
+                                  </div>
+                                    <app-rating (getRating) = "ongetRating($event)"></app-rating>
+                                  <input type="text" class="form-control" [(ngModel)]="cmt">
+                                  <button type="button" class="btn btn-primary" (click) = "putComment()">Đánh giá</button>
+                                </div>
+                                <div class="user-comment" *ngFor="let item of comment">
+                                    <div class="user">
+                                        <div class="img">
+                                            <img src="{{item.img}}" alt="">
+                                        </div>
+                                        <div class="name">
+                                            <h5>{{item.user}}</h5>
+                                        </div>
+                                        <div class="star">
+                                            <h5><span>Đánh giá:</span> {{item.star}} <i class="fas fa-star"></i></h5>
+                                        </div>
+                                    </div>
+                                    <div class="cmt"><span>Nhận xét:</span> {{item.cmt}}</div>
+                                    <hr/>             
+                                </div>
+                        </ng-template>
+                        
+                        
+
+                    </div>
+                </div>
+                <div class="product-service">
+                    <div class="services">
+                        <div class="service-item">
+                            <div class="icon"><i class="fas fa-car-side"></i></div>
+                            <div class="content">
+                                <h5>GIAO HÀNG MIỄN PHÍ</h5>
+                                <p>Đối với các đơn hàng trên 2.000.000 đ</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="service-item">
+                                <div class="icon"><i class="fas fa-piggy-bank"></i></div>
+                                <div class="content">
+                                    <h5>TÍCH ĐIỂM ĐỔI QUÀ</h5>
+                                    <p>Cam kết chính hàng chính hãng 100%</p>
+                                </div>
+                        </div>
+                        <hr/>
+                        <div class="service-item">
+                                    <div class="icon"><i class="fas fa-user-shield"></i></div>
+                                    <div class="content">
+                                        <h5>BẢO HÀNH TOÀN QUỐC</h5>
+                                        <p>Gọi ngay hotline để được tư vấn</p>
+                                    </div>
+                        </div>
+                        <hr/>
+                        <div class="service-item">
+                                <div class="icon"><i class="fas fa-blender-phone"></i></div>
+                                <div class="content">
+                                    <h5>TƯ VẤN 24/7</h5>
+                                    <p>Giảm giá từ 10% - 30% các ngày cuối tuần</p>
+                                </div>
+                        </div>
+                        <hr/>
+                    </div>
+        
+                </div>
+            </div>
+    </div>
+</div>
+<app-care-products (sendProduct) = "recieveProduct($event)"></app-care-products>

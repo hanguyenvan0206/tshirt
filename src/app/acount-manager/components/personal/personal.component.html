@@ -1,0 +1,63 @@
+<div class="personal">
+    <div class="personal-container">
+            <div class="link">
+                    <a [routerLink]="[ '/index']">Trang chủ <i class="fas fa-chevron-right"></i></a>
+                    <a >Thông tin cá nhân</a>
+            </div>
+            <div class="title">
+                    <div class="title-wrapper">
+                        <div class="line"></div>
+                        <h4>THÔNG TIN CÁ NHÂN</h4>
+                        <div class="line"></div>
+                    </div>  
+                </div>
+            <div class="menu">
+                <div class="infor" [ngClass]="{'active': Page != true}" (click) = "ChangePage(false)">Thông tin tài khoản</div>
+                <div class="sercure" [ngClass]="{'active': Page == true}" (click) = "ChangePage(true)">Bảo mật tài khoản</div>
+            </div>
+            <hr/>
+            <ng-container *ngIf="Page != true; else elsePage">
+                <div class="list-group">
+                    <li class="list-group-item">Tên user: <span>{{ user.username }}</span></li>
+                    <li class="list-group-item">Tên đầy đủ: <span>{{ user.fullname }}</span></li>
+                    <li class="list-group-item ">Email: <span>{{ user.email }}</span></li>
+                    <li class="list-group-item ">Phone: <span>+84{{ user.phone }}</span></li>
+                </div>
+            </ng-container>
+            <ng-template #elsePage>
+                    <div class="list-group">
+                            <h5>{{ message }}</h5>
+                            <li class="list-group-item change" (click) = "changePass()">Thay đổi mật khẩu?</li>
+                            <li class="list-group-item" *ngIf="passchange ==true">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                                            <form class="form-group"
+                                            [formGroup] = "Form"
+                                            (submit) = "onSubmit()"
+                                            >
+                                                <label for="">Mật khẩu mới</label>
+                                                <input type="text"
+                                                class="form-control" aria-describedby="helpId" 
+                                                formControlName = "password"
+                                                 >
+                                                 <div class="alert alert-warning" role="alert" *ngIf="alert !=null">
+                                                        <strong>{{alert}}</strong>
+                                                </div>
+                                                <label for="">Nhập lại mật khẩu</label>
+                                                <input type="text"
+                                                class="form-control"  aria-describedby="helpId"
+                                                formControlName = "confirmPass"
+                                                >
+                                                <div class="alert alert-warning" role="alert" *ngIf="alert1 !=null">
+                                                        <strong>{{alert1}}</strong>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Thay đổi</button>
+                                            </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+            </ng-template>
+            
+    </div>
+</div>

@@ -1,0 +1,75 @@
+
+<div class="daily-deal">
+    <div class="deal-container">
+      <div class="row">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col1">
+              <div class="menu-wrapper">
+                  <div class="menu">
+                      <div class="item">
+                          <img src="./../../../../assets/img/icon1.jpg" alt="">
+                      </div>
+                      <div class="item">
+                            <img src="./../../../../assets/img/icon2.jpg" alt="">
+                    </div>
+                    <div class="item">
+                            <img src="./../../../../assets/img/icon3.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="menu">
+                        <div class="item">
+                            <img src="./../../../../assets/img/icon4.jpg" alt="">
+                        </div>
+                        <div class="item">
+                              <img src="./../../../../assets/img/icon5.jpg" alt="">
+                      </div>
+                      <div class="item">
+                              <img src="./../../../../assets/img/icon6.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="menu">
+                            <div class="item">
+                                <img src="./../../../../assets/img/icon7.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                  <img src="./../../../../assets/img/icon8.jpg" alt="">
+                          </div>
+                          <div class="item">
+                                  <img src="./../../../../assets/img/icon9.jpg" alt="">
+                          </div>
+                    </div>
+                    <div class="out-line"></div>
+              </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-8 col-lg-8 col2">
+              <div class="deal-product">
+                    <owl-carousel-o class="slide-content" [options]="customOptions">
+                            <ng-template  carouselSlide *ngFor="let product of products">
+                                <div class="slide-item">
+                                    <div class="img">
+                                            <img src="{{ product.img }}" alt="" [routerLink]="[ '/product', product.id ]">
+                                            <div class="des">
+                                                <div class="content">
+                                                        <span>Thông tin sản phẩm:</span> {{ product.des | formatText: 150}}
+                                                </div>
+                                                <div class="btn">
+                                                    <ng-container *ngIf="product.status == true; else offStock">
+                                                        <button type="button" class="btn btn-primary"  (click) = "addtocart(product)">Thêm vào giỏ hàng</button> 
+                                                    </ng-container>
+                                                    <ng-template #offStock>
+                                                        <div class="alert alert-danger" role="alert">
+                                                            <strong>Sản phẩm đã hết hàng</strong>
+                                                        </div>
+                                                    </ng-template>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="product-name">{{product.name}} {{product.id}}</div>
+                                    <div class="price">{{ product.price | currency : 'VND'}}</div>
+                                </div>
+                            </ng-template>
+                    </owl-carousel-o>
+              </div>
+          </div>
+      </div>  
+    </div>
+</div>

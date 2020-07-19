@@ -1,0 +1,37 @@
+<div class="login">
+    <div class="login-container">
+            <div class="link">
+                    <a [routerLink]="[ '/index']">Trang chủ <i class="fas fa-chevron-right"></i></a>
+                    <a >Đăng nhập tài khoản</a>
+                </div>
+                <div class="content">
+                  <div class="title">
+                    <h3>Đăng nhập thông tin tài khoản</h3>
+                    <hr/>
+                    <h5>{{ message }}</h5>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <form class="form-group" 
+                    (submit) = "onSubmit()">
+                    <label for="">Email</label>
+                    <input type="text" name="" 
+                    class="form-control" placeholder="" 
+                    aria-describedby="helpId"
+                    [(ngModel)]="user.email"
+                    [ngModelOptions]="{standalone: true}"
+                    >
+                    <label for="">Password</label>
+                    <input type="password"
+                     name=""  class="form-control" 
+                     placeholder="" aria-describedby="helpId"
+                     [(ngModel)]="user.password"
+                     [ngModelOptions]="{standalone: true}"
+                     >
+                      <div class="alert alert-warning" role="alert" *ngIf="alert">
+                        <strong>{{ alert }}</strong>
+                      </div>
+                    <button  type="submit" class="btn btn-primary">Đăng nhập</button>
+                  </form>
+    </div>
+</div>

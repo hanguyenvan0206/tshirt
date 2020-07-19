@@ -1,0 +1,79 @@
+<div class="register">
+    <div class="register-container">
+        <div class="link">
+            <a [routerLink]="[ '/index']">Trang chủ <i class="fas fa-chevron-right"></i></a>
+            <a >Đăng ký tài khoản</a>
+        </div>
+        <div class="content">
+          <div class="title">
+            <h3>Đăng ký thông tin tài khoản</h3>
+          </div>
+          <hr/>
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <form class="form-group" 
+          [formGroup] = "registerForm"
+          (submit) = "onSubmit()"
+          >
+            <label for="">Username</label>
+            <input 
+            type="text" 
+            name=""  
+            class="form-control" 
+             formControlName = "username"
+             >
+             <app-validate
+             [control] = "registerForm.controls.username"
+             [name-control] = "Username"
+             [Usererr] = "Usererr"
+             ></app-validate>
+            <label for="">Password</label>
+            <input type="password"
+             name=""  class="form-control" 
+             placeholder="" aria-describedby="helpId" 
+             formControlName = "password"
+             >
+             <app-validate
+             [control] = "registerForm.controls.password"
+             [name-control] = "Password"
+             ></app-validate>
+            <label for="">Fullname</label>
+            <input type="text" 
+            name=""  class="form-control" 
+            placeholder="" aria-describedby="helpId"
+             formControlName = "fullname"
+             >
+             <app-validate
+             [control] = "registerForm.controls.fullname"
+             [name-control] = "Fullname"
+             ></app-validate>
+            <label for="">Email</label>
+            <input type="text" name="" 
+            class="form-control" placeholder="" 
+            aria-describedby="helpId" 
+            formControlName = "email"
+            >
+            <app-validate
+             [control] = "registerForm.controls.email"
+             [name-control] = "Email"
+             [Emailerr] = "Emailerr"
+             ></app-validate>
+            <label for="">Phone</label>
+            <input type="number" name="" 
+            class="form-control" placeholder="" 
+            aria-describedby="helpId" 
+            formControlName = "phone"
+            >
+            <app-validate
+            [control] = "registerForm.controls.phone"
+            [name-control] = "Phone"
+            [Phoneerr] = "Phoneerr"
+            ></app-validate>
+            <button  type="submit" class="btn btn-primary">Đăng ký</button>
+          </form>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+.active{
+    color:#106F85;
+    font-weight: 550;
+}
+.product-title{
+    margin-top: 20px;
+    .title{
+        display: flex;
+        justify-content: center;
+        .title-wrapper{
+            h4{
+                font-size: 20px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #106F85;
+            }
+            .line{
+                width: 100%;
+                background-color: #000000;
+                height: 1px;
+                margin: 8px 0 8px 0;
+            }
+
+        }
+        
+    }
+    .item-title{
+        display: flex;
+        justify-content: center;
+        .item{
+            margin-right: 20px;
+           font-size: 17px;
+           cursor: pointer;
+        }
+    }
+}
+.slide{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    .slide-container{
+        width: 75%;
+        .slide-content{
+            .slide-item{
+                cursor: pointer;
+                .img{
+                    position: relative;
+                    button{
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        background-color: #1E7081;
+                        display: none;
+                        border: none;
+                        border-radius: 0px;
+                        &:hover{
+                            background-color: #4d4f4d;
+                        }
+                    }
+                    .alert{
+                        position: absolute;
+                        bottom: -15px;
+                        width: 100%;
+                        display: none;
+                        border: none; 
+                    }
+
+                }
+                
+                .price, .product-name{
+                    margin: 10px;
+                }
+                
+            &:hover{
+                border: 10px solid #1E7081;
+                background-color: #1E7081;
+                border-radius: 4px;
+                .img{
+                    .alert, button{
+                        display: block;
+                    }
+
+                }
+                .price, .product-name{  
+                    color:#ffffff;
+                }
+            }
+            }
+        }
+        
+    }
+}

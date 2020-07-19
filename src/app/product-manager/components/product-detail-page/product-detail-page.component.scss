@@ -1,0 +1,188 @@
+.active{
+    font-weight: 600;
+    color: #1E7081;
+}
+.detail-Product{
+    display: flex;
+    justify-content: center;
+    .detail-Product-container{
+        width: 75%;
+        //border: 1px solid black;
+        .link{
+            display: flex;
+            a{
+                margin-right: 10px;
+                font-size: 17px;
+                i{
+                    font-size: 12px;
+                }
+            }
+        }
+        .product{
+            margin-top: 30px;
+            display: flex;
+            .product-content{
+                width: 70%;
+                .row{
+                    .col1{
+                        .product-img{
+                            img{
+                                max-width: 100%;
+                            }
+                        }
+                    }
+                    .col2{
+                        background-color: #F5F5F5;
+                        .product-name{
+                            margin-top: 10px;
+                            font-size: 24px;
+                            font-weight: 550;
+                            color: #1E7081;
+                        }
+                        .product-status{
+                            display: flex;
+                            justify-content: space-between;
+                            font-size: 15px;
+                            span{
+                                font-weight: 600;
+                                color: #1E7081;
+                            }
+                        }
+                        .product-price{
+                            margin: 15px 0 15px 0;
+                            color: #1E7081;
+                            font-size: 25px;
+                            font-weight: 550;
+                        }
+                        .product-des{
+                            font-size: 17px;
+                        }
+                        .buy-action{
+                            margin-top: 20px;
+                            .form-group{
+                                display: flex;
+                                label{
+                                    margin-right: 15px;
+                                    font-weight: 600;
+                                }
+                                .plus,.minus{
+                                    display: flex;
+                                    align-items: center;
+                                    margin: 0 10px 0 10px;
+                                    cursor: pointer;
+                                }
+                                input{
+                                    max-width: 80px;
+                                }
+                                button{
+                                    margin-top: 15px;
+                                    background-color:  #1E7081;}
+
+                            }
+                        }
+                        .contact{
+                            h5{
+                                font-size: 17px;
+                                font-weight: 400;
+                                span{
+                                    font-weight: 600;
+                                    &:hover{
+                                        color: #1E7081; 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .des-comment{
+                    .des-menu{
+                        display: flex;
+                        justify-content: center;
+                        .item{
+                            margin: 10px;
+                            font-size: 17px;
+                            cursor: pointer;
+                        }
+                    }
+                    .form-group{
+                        label{
+                            i{
+                                cursor: pointer;
+                            }
+                            i:nth-child(1), i:nth-child(2){
+                                color: #d4b804;
+                            }
+                        }
+                        input{
+                            padding: 40px 10px 40px 10px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                    .user-comment{
+                        .user{
+                            display: flex;
+                            align-items: center;
+                            .img{
+                                margin-right: 10px;
+                                img{
+                                    max-width: 80px;
+                                    max-height: 80px;
+                                    border-radius: 50%;
+                                }
+                            }
+                            .name{
+                                margin-right: 20px;
+                                color:green;
+                            }
+                            .star{
+                                h5{
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    span{
+                                        font-weight: 550;
+                                    }
+                                    i{
+                                        color: #FF7700;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            .product-service{
+                margin-left: 20px;
+                width: 30%;
+                //border: 1px solid black;
+                .services{
+                    background-color: #F5F5F5;
+                    margin-left: 20px;
+                    padding: 20px 10px 10px 10px;
+                    //border: 1px solid black;
+                    .service-item{
+                        display: flex;
+                        .icon{
+                            width: 30%;
+                            display: flex;
+                            align-items: center;
+                            i{font-size: 50px; color:#1E7081; }
+                        }
+                        .content{
+                            width: 70%;
+                            h5{
+                                font-size: 16px;
+                            }
+                            p{
+                                color:#545352;
+                            }
+                        }
+                    }
+                }
+               
+
+            }
+        }
+
+    }
+}

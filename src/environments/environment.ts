@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  Api:
+  API:'https://tshirt26.herokuapp.com/',
+  imgAPI: 'https://i.ibb.co/',
   production: false
 };
 
